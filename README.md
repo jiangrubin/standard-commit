@@ -1,6 +1,6 @@
 ## 前言
 
-在多人协作开发项目时，如果没有规范约束 git commit message，造成各种提交风格五花八门。规范的提交信息能让他人快速了解此次提交的目的，还可以有效的输出 CHANGELOG，对项目的管理至关重要。
+在多人协作开发项目时，如果没有规范约束 git commit message，容易造成各种提交的风格五花八门。而规范的提交信息能让他人快速了解此次提交的目的，还可以有效的输出 CHANGELOG，对项目的管理至关重要。
 
 ## Commit message 的格式
 
@@ -19,7 +19,7 @@
 - feat：新功能
 - fix：修复 bug
 - docs：文档修改
-- style：格式（不影响代码运行的变动）
+- style：代码格式（不影响代码运行的变动）
 - refactor：代码重构（即不是新增功能，也不是修改 bug 的代码变动）
 - perf：优化相关，比如提升性能、体验
 - test：增加测试
@@ -37,9 +37,7 @@
 
 ## Commitizen
 
-了解规范格式后，就需要通过 <a href="https://github.com/commitizen/cz-cli" target="_blank">Commitizen</a> 借助它提供的 git cz 命令替代我们的 git commit 命令，帮助我们生成符合规范的 commit message
-
-### 安装
+了解规范格式后，就需要通过 <a href="https://github.com/commitizen/cz-cli" target="_blank">Commitizen</a> 借助它提供的 git cz 命令替代我们的 git commit 命令，帮助我们生成符合规范的 commit message。
 
 推荐在本地安装的方式
 
@@ -55,7 +53,7 @@ npm install commitizen --save-dev
 npx commitizen init cz-conventional-changelog --save-dev --save-exact
 ```
 
-> npm < 5.2 可以执行 `./node_modules/.bin/commitizen or ./node_modules/.bin/git-cz`
+> npm < 5.2 可以执行 `./node_modules/.bin/commitizen` 或者 `./node_modules/.bin/git-cz`
 
 并在 package.json 中添加 npm scripts 运行脚本
 
@@ -78,11 +76,11 @@ package.json 会新增如下配置：
 
 之后就可以在项目中执行 `npm run commit` 或者 `npx git cz`，效果如下：
 
-![](https://jrb1995.github.io/post-images/1580967235373.jpeg)
+![](https://cdn.jsdelivr.net/gh/jrb1995/image-host/1580967235373.jpeg)
 
 ## standard-version: 自动生成 CHANGELOG
 
-使用工具后我们的工程 commit message 应该是符合 Angular 团队那套，这样也便于我们借助 [standard-version](https://github.com/conventional-changelog/standard-version) 这样的工具, 自动生成 CHANGELOG
+使用工具后我们的工程 commit message 应该是符合 Angular 团队那套，这样也便于我们借助 <a href="https://github.com/conventional-changelog/standard-version" target="_blank">standard-version</a> 这样的工具，自动生成 CHANGELOG。
 
 本地安装
 
@@ -100,7 +98,11 @@ npm install standard-version --save-dev
 }
 ```
 
-更多使用特性详见其文档
+运行脚本后，效果大致如下：
+
+![](https://cdn.jsdelivr.net/gh/jrb1995/image-host/1580970514212.jpeg)
+
+更多使用特性详见其<a href="https://github.com/conventional-changelog/standard-version" target="_blank">文档</a>
 
 ## 结语
 
